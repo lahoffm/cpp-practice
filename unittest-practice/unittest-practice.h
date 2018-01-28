@@ -19,8 +19,11 @@ public:
 	operator const char*();
 };
 
+
 class PressureSensor : public Sensor {
 public:
 	PressureSensor(double);
 	operator const char*();
 };
+
+double getFreeSpace(TemperatureSensor&, PressureSensor&, double, double);
