@@ -3,25 +3,24 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-using namespace std;
 
 class Sensor {
 public:
 	double reading;
-	string displayStr;
-	Sensor(double myReading);
-	const char* make_cstr(string start, string end);
+	std::string displayStr;
+	Sensor(double);
+	const char* make_cstr(std::string, std::string);
 	virtual operator const char*();
 };
 
 class TemperatureSensor : public Sensor {
 public:
-	TemperatureSensor(double tempReading);
+	TemperatureSensor(double);
 	operator const char*();
 };
 
 class PressureSensor : public Sensor {
 public:
-	PressureSensor(double pressureReading);
+	PressureSensor(double);
 	operator const char*();
 };
